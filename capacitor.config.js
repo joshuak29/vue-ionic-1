@@ -1,6 +1,4 @@
-import type { CapacitorConfig } from '@capacitor/cli';
-
-const config: CapacitorConfig = {
+const config = {
   appId: 'vue.ionic.v1',
   appName: 'vue-ionic-1',
   webDir: 'dist'
