@@ -2,7 +2,7 @@
     <IonPage class="p-4">
         <IonContent>
             <div class="flex flex-row items-center px-4">
-                <IonAvatar class="w-24 h-auto">
+                <IonAvatar class="w-20 h-auto">
                     <img alt="Silhouette of a person's head"
                         src="https://ionicframework.com/docs/img/demos/avatar.svg" />
                 </IonAvatar>
@@ -38,22 +38,37 @@
 
                 <ion-card-content>
                     <div class="mb-6">
-                        <div class="font-semibold flex flex-row flex-nowrap items-end justify-between"><span>Albums</span>  <span class="text-xs font-extrabold text-blue-800">See all</span></div>
+                        <div class="font-semibold flex flex-row flex-nowrap items-end justify-between">
+                            <span>Albums</span> <span class="text-xs font-extrabold text-blue-800">See all</span>
+                        </div>
                         <IonList>
-                            <IonItem></IonItem>
-                            <IonItem></IonItem>
-                            <IonItem></IonItem>
-                            <IonItem></IonItem>
+                            <IonItem class="flex flex-row h-fit my-4" v-for="i in 3" :key="i">
+                                <img  class="h-20" alt="Silhouette of a person's head"
+                                    src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+
+                                <div class="flex flex-col ml-4">
+                                    <span class="font-bold">Mom Bebe</span>
+                                    <span class="text-xs">2003</span>
+                                </div>
+                            </IonItem>
                         </IonList>
                     </div>
 
                     <div>
-                        <div class="font-extrabold flex flex-row flex-nowrap items-end justify-between"><span>Songs</span>  <span class="text-xs font-extrabold text-blue-800">See all</span></div>
+                        <div class="font-extrabold flex flex-row flex-nowrap items-end justify-between">
+                            <span>Songs</span> <span class="text-xs font-extrabold text-blue-800">See all</span>
+                        </div>
                         <IonList>
-                            <IonItem></IonItem>
-                            <IonItem></IonItem>
-                            <IonItem></IonItem>
-                            <IonItem></IonItem>
+
+                            <IonItem class="flex flex-row justify-start h-fit my-4" v-for="i in 3" :key="i">
+                                <img  class="h-20" alt="Silhouette of a person's head"
+                                    src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+
+                                <div class="flex flex-col ml-4">
+                                    <span class="font-bold">Mom Bebe</span>
+                                    <span class="text-xs">Maitre Gims ft Koba Lad, Dadju & Ya Levis</span>
+                                </div>
+                            </IonItem>
                         </IonList>
                     </div>
 
@@ -61,6 +76,44 @@
             </IonCard>
 
             <!-- recomended -->
+            <IonCard class="bg-transparent">
+                <IonList class="flex flex-row flex-nowrap">
+                    <IonItem>
+                        <IonAvatar class="w-20 h-20">
+                            <img alt="Silhouette of a person's head"
+                                src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                        </IonAvatar>
+                    </IonItem>
+
+                    <IonItem>
+                        <IonAvatar class="w-20 h-auto">
+                            <img alt="Silhouette of a person's head"
+                                src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                        </IonAvatar>
+                    </IonItem>
+
+                    <IonItem>
+                        <IonAvatar class="w-20 h-auto">
+                            <img alt="Silhouette of a person's head"
+                                src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                        </IonAvatar>
+                    </IonItem>
+
+                    <!-- <IonItem>
+                        <IonAvatar class="w-20 h-auto">
+                            <img alt="Silhouette of a person's head"
+                                src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                        </IonAvatar>
+                    </IonItem>
+
+                    <IonItem>
+                        <IonAvatar class="w-20 h-auto">
+                            <img alt="Silhouette of a person's head"
+                                src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                        </IonAvatar>
+                    </IonItem> -->
+                </IonList>
+            </IonCard>
         </IonContent>
     </IonPage>
 </template>
