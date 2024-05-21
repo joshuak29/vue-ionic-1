@@ -22,7 +22,7 @@ const routes = [
     path: "/player",
     name: "Player",
     component: PlayerPage,
-  },
+  }
 ];
 
 const router = createRouter({

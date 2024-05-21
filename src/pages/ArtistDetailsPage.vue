@@ -1,10 +1,9 @@
 <template>
-    <IonPage class="py-4 no-scrollbar">
+    <IonPage class="pt-4 no-scrollbar">
         <IonContent class="">
             <div class="flex flex-row items-center px-4 mb-8">
-                <IonAvatar class="w-28 h-auto">
-                    <img alt="Silhouette of a person's head"
-                        src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                <IonAvatar class="w-28 h-auto ">
+                    <img alt="Silhouette of a person's head" src="../thumbnail.jpg" />
                 </IonAvatar>
 
 
@@ -43,8 +42,7 @@
                         </div>
                         <IonList>
                             <IonItem class="flex flex-row h-fit my-4" v-for="i in 3" :key="i">
-                                <img class="h-24" alt="Silhouette of a person's head"
-                                    src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                                <img class="h-24" alt="Silhouette of a person's head" src="../thumbnail.jpg" />
 
                                 <div class="flex flex-col ml-4">
                                     <span class="font-bold">Mom Bebe</span>
@@ -61,8 +59,7 @@
                         <IonList>
 
                             <IonItem class="flex flex-row justify-start h-fit my-4" v-for="i in 3" :key="i">
-                                <img class="h-24" alt="Silhouette of a person's head"
-                                    src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                                <img class="h-24" alt="Silhouette of a person's head" src="../thumbnail.jpg" />
 
                                 <div class="flex flex-col ml-4">
                                     <span class="font-bold">Mom Bebe</span>
@@ -80,17 +77,20 @@
                 <IonCardHeader>
                     <IonCardTitle class="text-lg">Recommended for you</IonCardTitle>
                 </IonCardHeader>
-                <div class="scroll flex flex-row flex-nowrap gap-4 overflow-x-auto overflow-y-hidden no-scrollbar text-center mx-4" :scrollable="true">
+                <div class="scroll flex flex-row flex-nowrap gap-4 overflow-x-auto overflow-y-hidden no-scrollbar text-center mx-4"
+                    :scrollable="true">
                     <div v-for="i in 10" :key="i" class="flex flex-col gap-2">
                         <IonAvatar class="w-24 h-auto">
-                            <img alt="Silhouette of a person's head"
-                                src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                            <img alt="Silhouette of a person's head" src="../thumbnail.jpg" />
                         </IonAvatar>
                         <span class="font-bold">MHD</span>
                     </div>
                 </div>
             </div>
         </IonContent>
+        <IonFooter>
+            <PlayerFooterComponent />
+        </IonFooter>
     </IonPage>
 </template>
 
@@ -102,13 +102,25 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
+img {
+    @apply aspect-square
+}
+
+IonAvatar {
+    @apply shadow-md shadow-white
+}
 </style>
 
 <script setup>
-import { IonPage, IonContent, IonAvatar, IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonList, IonItem } from '@ionic/vue';
+import { IonPage, IonContent, IonAvatar, IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonList, IonItem, IonFooter } from '@ionic/vue';
 import BaseLayout from '@/components/base/BaseLayout.vue'
+
+import PlayerFooterComponent from '@/pages/PlayerFooterComponent.vue'
+const thumbnail = "../thumbnail.jpg"
 </script>
