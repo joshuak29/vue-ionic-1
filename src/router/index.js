@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "@ionic/vue-router";
 import ArtistDetailsPage from "@/pages/ArtistDetailsPage.vue";
 import PlayerPage from "@/pages/PlayerPage.vue";
 import QueuePage from "@/pages/QueuePage.vue";
+import AlbumDetailsPage from "@/pages/AlbumDetailsPage.vue";
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
     path: "/queue",
     name: "Queue",
     component: QueuePage
+  }, 
+  {
+    path: "/albums/:id",
+    name: "Album",
+    component: AlbumDetailsPage
   }
 ];
 
