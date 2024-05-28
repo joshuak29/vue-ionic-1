@@ -36,36 +36,25 @@
                 </IonCardHeader>
 
                 <ion-card-content>
+                    <!-- albums -->
                     <div class="mb-6">
                         <div class="font-semibold flex flex-row flex-nowrap items-end justify-between">
                             <span>Albums</span> <span class="text-xs font-extrabold text-blue-800">See all</span>
                         </div>
                         <IonList>
-                            <IonItem class="flex flex-row h-fit my-4" v-for="i in 3" :key="i">
-                                <img class="h-24" alt="Silhouette of a person's head" src="../thumbnail.jpg" />
-
-                                <div class="flex flex-col ml-4">
-                                    <span class="font-bold">Mom Bebe</span>
-                                    <span class="text-xs">2003</span>
-                                </div>
-                            </IonItem>
+                            <!-- album item -->
+                            <AlbumItem v-for="i in 3" :key="i"/>
                         </IonList>
                     </div>
 
+                    <!-- songs -->
                     <div>
-                        <div class="font-extrabold flex flex-row flex-nowrap items-end justify-between">
+                        <div class="font-semibold flex flex-row flex-nowrap items-end justify-between">
                             <span>Songs</span> <span class="text-xs font-extrabold text-blue-800">See all</span>
                         </div>
                         <IonList>
-
-                            <IonItem class="flex flex-row justify-start h-fit my-4" v-for="i in 3" :key="i">
-                                <img class="h-24" alt="Silhouette of a person's head" src="../thumbnail.jpg" />
-
-                                <div class="flex flex-col ml-4">
-                                    <span class="font-bold">Mom Bebe</span>
-                                    <span class="text-xs">Maitre Gims ft Koba Lad, Dadju & Ya Levis</span>
-                                </div>
-                            </IonItem>
+                            <!-- song item -->
+                            <SongItem v-for="item in 3" :key="item"/>
                         </IonList>
                     </div>
 
@@ -94,6 +83,17 @@
     </IonPage>
 </template>
 
+<script setup>
+import { IonPage, IonContent, IonAvatar, IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonList, IonItem, IonFooter } from '@ionic/vue';
+import BaseLayout from '@/components/base/BaseLayout.vue'
+
+import PlayerFooterComponent from '@/pages/PlayerFooterComponent.vue'
+import SongItem from '@/components/SongItem.vue'
+import AlbumItem from '@/components/AlbumItem.vue'
+const thumbnail = "../thumbnail.jpg"
+
+</script>
+
 <style scoped>
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
@@ -116,11 +116,3 @@ IonAvatar {
     @apply shadow-md shadow-white
 }
 </style>
-
-<script setup>
-import { IonPage, IonContent, IonAvatar, IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonList, IonItem, IonFooter } from '@ionic/vue';
-import BaseLayout from '@/components/base/BaseLayout.vue'
-
-import PlayerFooterComponent from '@/pages/PlayerFooterComponent.vue'
-const thumbnail = "../thumbnail.jpg"
-</script>

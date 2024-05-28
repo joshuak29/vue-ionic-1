@@ -3,15 +3,14 @@
         <IonContent>
             <!-- header -->
             <div class="flex flex-row justify-between py-6 px-6 text-xl font-bold">
-                <ChevronDownIcon class="h-6 w-6 text-white" />
+                <ChevronDownIcon class="h-6 w-6 text-white" @click="closePlayer" />
                 <div>Now Playing</div>
-                <ListBulletIcon class="h-6 w-6 text-white" />
+                <ListBulletIcon class="h-6 w-6 text-white" @click="toQueue" />
             </div>
 
             <!-- Thumbnail -->
             <div class="flex flex-row justify-center items-center px-8 mb-8">
-                <img src="../thumbnail.jpg"
-                    alt="" class="rounded-2xl h-full w-full aspect-square">
+                <img src="../thumbnail.jpg" alt="" class="rounded-2xl h-full w-full aspect-square">
             </div>
 
             <!-- Actions -->
@@ -49,6 +48,17 @@
 import { IonPage, IonHeader, IonContent, IonRange } from '@ionic/vue';
 import { ChevronDownIcon, ListBulletIcon, PlayCircleIcon, PauseCircleIcon, ForwardIcon, BackwardIcon, ArrowsRightLeftIcon, ArrowPathRoundedSquareIcon } from '@heroicons/vue/24/solid';
 import { ref } from "vue";
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const closePlayer = () => {
+    router.go(-1);
+}
+
+const toQueue = () => {
+    router.push({ name: "Queue" })
+}
 
 const pause = ref(false);
 

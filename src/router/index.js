@@ -1,17 +1,12 @@
 import { createRouter, createWebHistory } from "@ionic/vue-router";
-import HomePage from "../views/HomePage.vue";
 import ArtistDetailsPage from "@/pages/ArtistDetailsPage.vue";
 import PlayerPage from "@/pages/PlayerPage.vue";
+import QueuePage from "@/pages/QueuePage.vue";
 
 const routes = [
   {
     path: "/",
-    redirect: "/home",
-  },
-  {
-    path: "/home",
-    name: "Home",
-    component: HomePage,
+    redirect: "/artists/1",
   },
   {
     path: "/artists/:id",
@@ -22,6 +17,11 @@ const routes = [
     path: "/player",
     name: "Player",
     component: PlayerPage,
+  }, 
+  {
+    path: "/queue",
+    name: "Queue",
+    component: QueuePage
   }
 ];
 
